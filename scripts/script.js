@@ -70,7 +70,8 @@ subMenuEl.style.height = "100%";
 
 subMenuEl.style.backgroundColor = "var(--sub-menu-bg)";
 
-subMenuEl.classList.add("flex-around");
+subMenuEl.querySelector(".flex-around");
+
 
 subMenuEl.style.position = "absolute";
 
@@ -78,15 +79,11 @@ subMenuEl.style.top = "0";
 
 let topMenuLinks = topMenuEl.querySelector("a")
 
-topMenuEl.addEventListener('click', function (event) {
-   event.preventDefault();
-  if (event.target.tag === 'a') {
-        return;
-    }
-    console.log(event.target.textContent)
-});
-
-topMenuLinks.addEventListener('active', function (event) {
-   
-});
-
+topMenuEl.addEventListener('click', function(event) {
+ event.preventDefault()
+ this.querySelector('.active')
+ subMenuEl.style.top = "100%";
+ return "a"
+})
+  
+console.log("a")
